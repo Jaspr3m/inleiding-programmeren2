@@ -66,6 +66,11 @@ function healthDrain() {
         health = health - 1
         progressBar.value = health
         lifeIndicator.innerHTML = "HIJ LEEFT!!!"
+
+        crustImg.classList.add("enable")
+        sauceImg.classList.add("enable")
+        toppingImg.classList.add("enable")
+        
         crustImg.classList.remove("disable")
         sauceImg.classList.remove("disable")
         toppingImg.classList.remove("disable")
@@ -73,9 +78,9 @@ function healthDrain() {
     } else if (health >= 100) {
         health--
         progressBar.value = health
-        crustImg.classList.remove("disable")
-        sauceImg.classList.remove("disable")
-        toppingImg.classList.remove("disable")
+        crustImg.classList.add("enable")
+        sauceImg.classList.add("enable")
+        toppingImg.classList.add("enable")
         // wanneer health meer dan of gelijk aan 1 is, health blijft gelijk aan 1
     } else if (health <= 1) {
         health = 1
@@ -84,6 +89,10 @@ function healthDrain() {
         crustImg.classList.add("disable")
         sauceImg.classList.add("disable")
         toppingImg.classList.add("disable")
+
+        crustImg.classList.remove("enable")
+        sauceImg.classList.remove("enable")
+        toppingImg.classList.remove("enable")
     } 
 }
 // voer function healthDrain() elke 300 ms uit
