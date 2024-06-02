@@ -1,0 +1,130 @@
+.container {
+    display: grid;
+    padding: 1%;
+    margin: 2%;
+    border: solid 2px black;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.enable {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+img {
+    position: absolute;
+    z-index: auto;
+}
+
+button {
+    padding: 5px;
+}
+    
+.options-tab {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr;
+    gap: 1%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "crust-title"
+      "crust-options"
+      "sauce-title"
+      "sauce-options"
+      "topping-title"
+      "topping-options";
+    border-right: solid 1px black;
+}
+
+/* elements regarding titles and clickable items */
+
+.crust {
+    z-index: 0;
+}
+
+.crust-title {
+    grid-area: crust-title; 
+}
+
+.crust-options {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 10px 100px; 
+    grid-template-areas: 
+      ". . . ."; 
+    grid-area: crust-options; 
+    padding-right: 5%; 
+}
+
+.sauce {
+    z-index: 1;
+}
+
+.sauce-title {
+    grid-area: sauce-title;
+}
+
+.sauce-options {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 10px 100px; 
+    grid-template-areas: 
+      ". . . ."; 
+    grid-area: sauce-options; 
+    padding-right: 5%; 
+}
+
+.topping {
+    z-index: 2;
+}
+
+.topping-title {
+    grid-area: topping-title;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.topping-options {
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr;
+    gap: 10px 100px; 
+    grid-template-areas: 
+      ". . . .";
+    grid-area: topping-options;
+    padding-right: 5%; 
+}
+
+/* --------------------------------------------- */
+
+/* tab regarding overview of the pizza */
+.overview-tab {
+    display: flex;
+    position: relative;
+    border-left: solid 1px black;
+    align-items: center;
+    justify-content: center;
+    padding: 300px;
+}
+
+.crust {
+    height: 100%;
+}
+
+/* --------------------------------------------- */
+
+.disable {
+    display: none;
+}
+
+
+  
