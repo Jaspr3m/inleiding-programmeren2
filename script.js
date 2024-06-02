@@ -43,7 +43,11 @@ function selecteerPepperoni() {
 function selecteerPineapple() {
     console.log("selecteerPineapple()")
     document.getElementById("topping-img").src = "img/pineapple.png";
+    let audio = document.querySelector("audio")
+    audio.play();
 }
+
+// Function vanuit eigen onderzoek
 
 thinCrustKnop.addEventListener("click", selecteerThinCrust)
 thickCrustKnop.addEventListener("click", selecteerThickCrust)
