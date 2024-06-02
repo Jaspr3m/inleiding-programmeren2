@@ -86,8 +86,8 @@ function healthDrain() {
         toppingImg.classList.add("disable")
     } 
 }
-// voer function healthDrain() elke 100 ms uit
-setInterval(healthDrain, 100)
+// voer function healthDrain() elke 300 ms uit
+setInterval(healthDrain, 300)
 
 // als health onder 100 is (altijd), voeg 10 health toe
 function addHealth() {
