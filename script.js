@@ -25,33 +25,27 @@ let toppingImg = document.getElementById("topping-img")
 // FUNCTIONS ----------
 // Function die ervoor zorgt dat de thick crust naar thin verandert
 function selecteerThinCrust() {
-    console.log("selecteerThinCrust()")
     crustImg.src = "img/thin-crust.png";
 }
 
 function selecteerThickCrust() {
-    console.log("selecteerThickCrust()")
     crustImg.src = "img/thick-crust.png";
 }
 
 function selecteerMarinara() {
-    console.log("selecteerMarinara()")
     sauceImg.src = "img/marinara.png";
 }
 
 function selecteerChocolate() {
-    console.log("selecteerChocolate()")
     sauceImg.src = "img/chocolate.png";
 }
 
 function selecteerPepperoni() {
-    console.log("selecteerPepperoni()")
     toppingImg.src = "img/pepperoni.png";
 }
 
 // Function vanuit eigen onderzoek
 function selecteerPineapple() {
-    console.log("selecteerPineapple()")
     toppingImg.src = "img/pineapple.png";
     let audio = document.querySelector("audio")
     audio.play();
