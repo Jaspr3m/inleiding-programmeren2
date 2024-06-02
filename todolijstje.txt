@@ -1,0 +1,14 @@
+- add MATH RANDOM (bij add en remove health [nummer tussen 5 en 10])
+
+- vormgeving changes 
+> font
+> knop vormgeving (als het niet kan, laat het)
+> site achtergrond
+
+- array
+> alle namen die je de pizza geeft, 
+    worden opgeslagen in een array
+    en dan weergegeven
+
+
+

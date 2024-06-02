@@ -53,7 +53,7 @@ function selecteerPineapple() {
 
 // NAAMGEVING
 // Via inputveld, verander naam van de pizza en weergeef in H2
-let naam = "Jasprem"
+let naam = "Pizza"
 let h2 = document.querySelector("h2")
 
 function veranderNaam() {
@@ -77,7 +77,7 @@ function healthDrain() {
         crustImg.classList.add("enable")
         sauceImg.classList.add("enable")
         toppingImg.classList.add("enable")
-        
+
         crustImg.classList.remove("disable")
         sauceImg.classList.remove("disable")
         toppingImg.classList.remove("disable")
@@ -92,11 +92,11 @@ function healthDrain() {
     } else if (health <= 1) {
         health = 1
         progressBar.value = health
-        lifeIndicator.innerHTML = naam.toUpperCase() + " IS DOOD!! REVIVE " + naam.toUpperCase() + "!!!" 
+        lifeIndicator.innerHTML = naam.toUpperCase() + " IS DOOD GEGAAN!! HOE KON JE!?!?! "
         crustImg.classList.add("disable")
         sauceImg.classList.add("disable")
         toppingImg.classList.add("disable")
-    } 
+    }
 }
 // voer function healthDrain() elke 300 ms uit
 setInterval(healthDrain, 300)
@@ -114,7 +114,7 @@ function removeHealth() {
     if (health < 100) {
         health = health - 10
         progressBar.value = health
-    } 
+    }
 }
 
 // EVENT LISTENERS ---------------
@@ -123,7 +123,7 @@ thinCrustKnop.addEventListener("click", selecteerThinCrust)
 thickCrustKnop.addEventListener("click", selecteerThickCrust)
 marinaraKnop.addEventListener("click", selecteerMarinara)
 chocolateKnop.addEventListener("click", selecteerChocolate)
-pepperoniKnop.addEventListener("click",  selecteerPepperoni)
+pepperoniKnop.addEventListener("click", selecteerPepperoni)
 pineappleKnop.addEventListener("click", selecteerPineapple)
 
 // Progress bar event listener
