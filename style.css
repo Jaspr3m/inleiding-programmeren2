@@ -104,8 +104,6 @@ button {
     padding-right: 5%; 
 }
 
-/* --------------------------------------------- */
-
 /* tab regarding overview of the pizza */
 .overview-tab {
     display: flex;
@@ -123,8 +121,30 @@ button {
 /* --------------------------------------------- */
 
 .disable {
+    transition: all 2s;
     display: none;
 }
 
+/* Footer -------------------------------------- */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+section footer {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+/* Progress bar  */
 
   
