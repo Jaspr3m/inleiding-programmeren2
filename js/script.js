@@ -63,10 +63,10 @@ function veranderNaam() {
 
 // PIZZA HEALTHBAR
 // Variabelen aanmaken
+let health = 100
 let progressBar = document.querySelector("#progressBar")
 let lifeIndicator = document.querySelector("h2")
 let healthAdded = document.querySelector("h3")
-let health = 100
 
 function healthDrain() {
     // health gaat met -1 elke 100ms ervan af
