@@ -65,6 +65,7 @@ function veranderNaam() {
 // Variabelen aanmaken
 let progressBar = document.querySelector("#progressBar")
 let lifeIndicator = document.querySelector("h2")
+let healthAdded = document.querySelector("h3")
 let health = 100
 
 function healthDrain() {
@@ -101,19 +102,23 @@ function healthDrain() {
 // voer function healthDrain() elke 300 ms uit
 setInterval(healthDrain, 300)
 
-// als health onder 100 is (altijd), voeg 10 health toe
+// als health onder 100 is (altijd), voeg [nummer tussen 1-4] health toe
 function addHealth() {
     if (health < 100) {
-        health = health + (1 + Math.random()*15)
+        random = Math.floor(1 + Math.random()*3) 
+        health = health + random
         progressBar.value = health
+        healthAdded.innerHTML = random + "+ health"
     }
 }
 
-// als health onder 100 is (altijd), haal 10 health eraf
+// als health onder 100 is (altijd), haal [nummer tussen 1-10] health eraf
 function removeHealth() {
     if (health < 100) {
-        health = health - (1 + Math.random()*9)
+        random = Math.ceil(1 + Math.random()*9)
+        health = health - random
         progressBar.value = health
+        healthAdded.innerHTML = random + "- health"
     }
 }
 
