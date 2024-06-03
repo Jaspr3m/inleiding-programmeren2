@@ -1,9 +1,8 @@
-- add MATH RANDOM (bij add en remove health [nummer tussen 5 en 10])
-
 - vormgeving changes 
 > font
 > knop vormgeving (als het niet kan, laat het)
 > site achtergrond
+> flexbox for option tab
 
 - array
 > alle namen die je de pizza geeft, 
