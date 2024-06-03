@@ -81,7 +81,7 @@ function veranderNaam() {
 // PIZZA HEALTHBAR
 // Variabelen aanmaken
 let health = 100
-let progressBar = document.querySelector("#progressBar")
+let healthBar = document.querySelector("#healthBar")
 let lifeIndicator = document.querySelector("h2")
 let healthAdded = document.querySelector("h3")
 
@@ -90,7 +90,7 @@ function healthDrain() {
     // health gaat met -1 elke 300ms ervan af
     if (health < 100 && health > 1) {
         health = health - 1
-        progressBar.value = health
+        healthBar.value = health
         lifeIndicator.innerHTML = naam.toUpperCase() + " LEEFT!!!"
 
         crustImg.classList.remove("disable")
@@ -99,11 +99,11 @@ function healthDrain() {
         // wanneer het meer dan of gelijk aan 100 is, continu -1 aftrekken
     } else if (health >= 100) {
         health--
-        progressBar.value = health
+        healthBar.value = health
         // wanneer health meer dan of gelijk aan 1 is, health blijft gelijk aan 1
     } else if (health <= 1) {
         health = 1
-        progressBar.value = health
+        healthBar.value = health
         lifeIndicator.innerHTML = naam.toUpperCase() + " IS DOOD GEGAAN!! HOE KON JE!?!?!"
         crustImg.classList.add("disable")
         sauceImg.classList.add("disable")
@@ -118,7 +118,7 @@ function addHealth() {
     if (health < 100) {
         random = Math.floor(1 + Math.random()*3) 
         health = health + random
-        progressBar.value = health
+        healthBar.value = health
         healthAdded.innerHTML = random + "+ health"
     }
 }
@@ -128,7 +128,7 @@ function removeHealth() {
     if (health < 100) {
         random = Math.ceil(1 + Math.random()*9)
         health = health - random
-        progressBar.value = health
+        healthBar.value = health
         healthAdded.innerHTML = random + "- health"
     }
 }
