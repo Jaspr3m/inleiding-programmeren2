@@ -107,7 +107,7 @@ button {
     border-left: solid 1px black;
     align-items: center;
     justify-content: center;
-    padding: 300px;
+    padding: 150px;
 }
 
 .crust {
@@ -135,7 +135,7 @@ footer {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    gap: 0.5vw;
+    gap: 0;
 }
 
 section footer {

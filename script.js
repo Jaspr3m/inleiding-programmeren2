@@ -104,7 +104,7 @@ setInterval(healthDrain, 300)
 // als health onder 100 is (altijd), voeg 10 health toe
 function addHealth() {
     if (health < 100) {
-        health = health + 10
+        health = health + (1 + Math.random()*15)
         progressBar.value = health
     }
 }
@@ -112,7 +112,7 @@ function addHealth() {
 // als health onder 100 is (altijd), haal 10 health eraf
 function removeHealth() {
     if (health < 100) {
-        health = health - 10
+        health = health - (1 + Math.random()*9)
         progressBar.value = health
     }
 }
