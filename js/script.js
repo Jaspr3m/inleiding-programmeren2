@@ -1,5 +1,5 @@
 // Interactie ----------
-// Pizza interactie methodes
+// Pizza knoppen
 const thinCrustKnop = document.querySelector("button#thin-crust-button")
 const thickCrustKnop = document.querySelector("button#thick-crust-button")
 const marinaraKnop = document.querySelector("button#marinara-button")
@@ -11,11 +11,11 @@ const anchovisKnop = document.querySelector("button#anchovis-button")
 const pepperoniKnop = document.querySelector("button#pepperoni-button")
 const pineappleKnop = document.querySelector("button#pineapple-button")
 
-// Healthbar interactie methodes
+// Healthbar knoppen
 const addHealthKnop = document.querySelector("button#addHealth")
 const removeHealthKnop = document.querySelector("button#removeHealth")
 
-// Naamgeving interactie methodes
+// Naamgeving methodes
 const bevestigNaamKnop = document.querySelector("button#bevestigNaam")
 
 // IMG ----------------
@@ -25,7 +25,6 @@ let sauceImg = document.getElementById("sauce-img")
 let toppingImg = document.getElementById("topping-img")
 
 // FUNCTIONS ----------
-// Function die ervoor zorgt dat de thick crust naar thin verandert
 function selecteerThinCrust() {
     crustImg.src = "img/thin-crust.png";
 }
@@ -62,7 +61,7 @@ function selecteerPepperoni() {
     toppingImg.src = "img/pepperoni.png";
 }
 
-// Function vanuit eigen onderzoek
+// Function + theorie vanuit eigen onderzoek [audio afspelen]
 function selecteerPineapple() {
     toppingImg.src = "img/pineapple.png";
     let audio = document.querySelector("audio")
@@ -83,57 +82,56 @@ function veranderNaam() {
 let health = 100
 let healthBar = document.querySelector("#healthBar")
 let lifeIndicator = document.querySelector("h2")
-let healthAdded = document.querySelector("h3")
+let healthChange = document.querySelector("h3")
 
 // Functie die ervoor zorgt dat er health continu afgaat per 300ms
 function healthDrain() {
-    // health gaat met -1 elke 300ms ervan af
-    if (health < 100 && health > 1) {
-        health = health - 1
+    if (health < 100 && health > 1) { // als health minder dan 100 EN meer dan 1 is
+        health = health - 1 // continu -1 aftrekken van health
         healthBar.value = health
         lifeIndicator.innerHTML = naam.toUpperCase() + " LEEFT!!!"
-
-        crustImg.classList.remove("disable")
+        crustImg.classList.remove("disable") // disable class weghalen 
         sauceImg.classList.remove("disable")
-        toppingImg.classList.remove("disable")
-        // wanneer het meer dan of gelijk aan 100 is, continu -1 aftrekken
-    } else if (health >= 100) {
-        health--
+        toppingImg.classList.remove("disable") 
+        
+    } else if (health >= 100) { // wanneer het meer dan of gelijk aan 100
+        health-- // continu -1 aftrekken van health [andere notatie]
         healthBar.value = health
-        // wanneer health meer dan of gelijk aan 1 is, health blijft gelijk aan 1
-    } else if (health <= 1) {
-        health = 1
+    
+    } else if (health <= 1) { // wanneer health minder dan of gelijk aan 1 is
+        health = 1 // health blijft gelijk aan 1
         healthBar.value = health
         lifeIndicator.innerHTML = naam.toUpperCase() + " IS DOOD GEGAAN!! HOE KON JE!?!?!"
-        crustImg.classList.add("disable")
+        crustImg.classList.add("disable") // disable class toevoegen 
         sauceImg.classList.add("disable")
         toppingImg.classList.add("disable")
-    }
+    } else {}
 }
 // voer function healthDrain() elke 300 ms uit
 setInterval(healthDrain, 300)
 
-// als health onder 100 is (altijd), voeg [nummer tussen 1-4] health toe
 function addHealth() {
-    if (health < 100) {
-        random = Math.floor(1 + Math.random()*3) 
+    if (health < 100) { // als health onder 100 is
+        random = Math.floor(1 + Math.random()*3) // voeg [nummer tussen 1-4] aan health toe
         health = health + random
         healthBar.value = health
-        healthAdded.innerHTML = random + "+ health"
-    }
+        healthChange.innerHTML = random + "+ health"
+    } else {}
 }
 
-// als health onder 100 is (altijd), haal [nummer tussen 1-10] health eraf
-function removeHealth() {
-    if (health < 100) {
-        random = Math.ceil(1 + Math.random()*9)
+function removeHealth() { 
+    if (health < 100) { // als health onder 100 is
+        random = Math.ceil(1 + Math.random()*9) // haal [nummer tussen 1-10] aan health eraf
         health = health - random
         healthBar.value = health
-        healthAdded.innerHTML = random + "- health"
-    }
+        healthChange.innerHTML = random + "- health"
+    } else {}
 }
 
 // EVENT LISTENERS ---------------
+// Deze wachten/luisteren af tot er een "click" event gebeurt
+// Vervolgens voert het een function uit
+
 // Pizza knoppen event listeners
 thinCrustKnop.addEventListener("click", selecteerThinCrust)
 thickCrustKnop.addEventListener("click", selecteerThickCrust)
