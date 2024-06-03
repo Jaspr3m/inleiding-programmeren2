@@ -16,11 +16,6 @@ body {
 
 /* Enable and Disable omdat er voor allebei de acties een transition moest; kon niet alleen disable */
 
-.enable {
-    opacity: 1;
-    transition: all 0.5s ease;
-}
-
 .disable {
     opacity: 0;
     transition: all 0.5s ease;
@@ -120,16 +115,19 @@ button {
 .crust {
     z-index: 0;
     height: 100%;
+    transition: all 0.5s ease;
 }
 
 .sauce {
     z-index: 1;
     height: 100%;
+    transition: all 0.5s ease;
 }
 
 .topping {
     z-index: 2;
     height: 100%;
+    transition: all 0.5s ease;
 }
 
 /* --------------------------------------------- */
